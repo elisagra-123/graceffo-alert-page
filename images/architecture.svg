@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+  <title id="title">Graceffo Alert architecture diagram</title>
+  <desc id="desc">Flow diagram: MLB Stats API to Graceffo Alert Engine to Notification Provider to SMS Recipients.</desc>
+  <defs>
+    <style>
+      .node { fill: #ffffff; stroke: #c9d8f5; stroke-width: 2; rx: 14; }
+      .label { font: 600 28px Inter, Arial, sans-serif; fill: #1f2a44; }
+      .line { stroke: #305de0; stroke-width: 4; fill: none; stroke-linecap: round; }
+      .arrow { fill: #305de0; }
+    </style>
+  </defs>
+
+  <rect x="20" y="48" width="250" height="116" class="node" />
+  <text x="145" y="116" text-anchor="middle" class="label">MLB Stats API</text>
+
+  <rect x="335" y="48" width="290" height="116" class="node" />
+  <text x="480" y="116" text-anchor="middle" class="label">Graceffo Alert Engine</text>
+
+  <rect x="690" y="48" width="290" height="116" class="node" />
+  <text x="835" y="116" text-anchor="middle" class="label">Notification Provider</text>
+
+  <rect x="1045" y="48" width="140" height="116" class="node" />
+  <text x="1115" y="116" text-anchor="middle" class="label">SMS Recipients</text>
+
+  <path class="line" d="M270 106 L320 106">
+    <animate attributeName="stroke-dasharray" values="1,0;8,8;1,0" dur="3s" repeatCount="indefinite" />
+  </path>
+  <polygon points="320,106 307,98 307,114" class="arrow" />
+
+  <path class="line" d="M625 106 L675 106">
+    <animate attributeName="stroke-dasharray" values="1,0;8,8;1,0" dur="3s" begin="0.2s" repeatCount="indefinite" />
+  </path>
+  <polygon points="675,106 662,98 662,114" class="arrow" />
+
+  <path class="line" d="M980 106 L1030 106">
+    <animate attributeName="stroke-dasharray" values="1,0;8,8;1,0" dur="3s" begin="0.4s" repeatCount="indefinite" />
+  </path>
+  <polygon points="1030,106 1017,98 1017,114" class="arrow" />
+</svg>
