@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graceffo Alert | System Architecture</title>
+  <meta name="description" content="Technical architecture of Graceffo Alert: provider abstraction, retry orchestration, Redis state persistence, and operational telemetry.">
+  <link rel="canonical" href="https://elisagra-123.github.io/graceffo-alert-page/architecture.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Graceffo Alert | System Architecture">
+  <meta property="og:description" content="Engineering design decisions behind reliable SMS appearance alerts.">
+  <meta property="og:url" content="https://elisagra-123.github.io/graceffo-alert-page/architecture.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Graceffo Alert | System Architecture">
+  <meta name="twitter:description" content="How Graceffo Alert is designed for resilient campaign delivery.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><div class="nav-wrap"><a class="brand" href="index.html">Graceffo Alert</a><nav aria-label="Primary"><ul><li><a href="index.html">Home</a></li><li><a href="architecture.html" aria-current="page">Architecture</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></header>
+<main id="main-content">
+  <section class="hero"><h1>System Architecture</h1><p class="lead">Graceffo Alert is intentionally engineered as a compact but production-style event notification pipeline.</p></section>
+  <section class="panel">
+    <h2>Core Components</h2>
+    <div class="grid">
+      <article><h3>Feed Monitor</h3><p>The monitor ingests official MLB game updates and normalizes event data into deterministic signals consumed by detection logic.</p></article>
+      <article><h3>Appearance Detector</h3><p>Detection guards prevent false triggers by requiring confirmed in-game presence before any campaign can be created.</p></article>
+      <article><h3>Campaign State Machine</h3><p>State transitions formalize lifecycle boundaries, ensuring each campaign moves through valid steps with explicit completion criteria.</p></article>
+      <article><h3>Provider Interface</h3><p>A provider abstraction isolates external messaging APIs so reliability policy remains consistent across implementation changes.</p></article>
+      <article><h3>Retry Orchestrator</h3><p>Retry orchestration handles transient delivery failures through bounded backoff, reducing dropped messages without creating unbounded send behavior.</p></article>
+      <article><h3>Delivery Ledger</h3><p>The ledger records send attempts, responses, and terminal outcomes to support operational accountability and incident diagnostics.</p></article>
+      <article><h3>Redis Persistence</h3><p>Redis stores campaign and queue context so processing can resume cleanly after process restart or host interruption.</p></article>
+      <article><h3>Telemetry + Diagnostics</h3><p>Structured telemetry and runtime diagnostics provide visibility into latency, failure rates, and campaign health.</p></article>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>Design Objectives</h2>
+    <ul>
+      <li>Maintain accurate trigger semantics from official game data.</li>
+      <li>Deliver informational SMS updates to consented recipients with controlled retry behavior.</li>
+      <li>Preserve state across restarts for predictable campaign continuity.</li>
+      <li>Minimize vendor lock-in through provider-independent interfaces.</li>
+      <li>Support rapid troubleshooting through auditable delivery history and telemetry.</li>
+    </ul>
+  </section>
+</main>
+<footer><div class="footer-wrap"><section><h2>Project Description</h2><p class="muted">Technical reference page for the Graceffo Alert notification architecture.</p></section><section><h2>Quick Links</h2><ul><li><a href="index.html">Home</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></section><section><h2>Resources</h2><ul><li><a href="https://github.com/elisagra-123/graceffo-alert-page">GitHub</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul><small class="meta">© 2026 Graceffo Alert · Version 2.0 · Last updated 2026-07-26</small></section></div></footer>
+</body>
+</html>

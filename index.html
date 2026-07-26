@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graceffo Alert | Real-Time Game Appearance Alerts</title>
+  <meta name="description" content="Graceffo Alert monitors official MLB game data and sends SMS notifications when Gordon Graceffo enters a St. Louis Cardinals game.">
+  <link rel="canonical" href="https://elisagra-123.github.io/graceffo-alert-page/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Graceffo Alert | Real-Time Game Appearance Alerts">
+  <meta property="og:description" content="Personal, consent-based SMS alerts for Gordon Graceffo game appearances, built with production-style reliability.">
+  <meta property="og:url" content="https://elisagra-123.github.io/graceffo-alert-page/">
+  <meta property="og:site_name" content="Graceffo Alert">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Graceffo Alert | Real-Time Game Appearance Alerts">
+  <meta name="twitter:description" content="Reliable, privacy-first MLB appearance notifications for approved recipients.">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Graceffo Alert",
+    "url": "https://elisagra-123.github.io/graceffo-alert-page/",
+    "description": "Personal notification service for Gordon Graceffo game appearance alerts."
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">Graceffo Alert</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="compliance.html">Compliance</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">Real-Time Game Appearance Alerts</h1>
+    <p class="lead">Graceffo Alert automatically monitors official MLB game data and delivers SMS notifications when Gordon Graceffo enters a St. Louis Cardinals game.</p>
+    <p class="muted">This is a personal notification service for a fixed group of approved recipients. It is engineered for resilience, built with production-style operational safeguards, and provides informational updates only.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="how-it-works-title">
+    <h2 id="how-it-works-title">How It Works</h2>
+    <div class="flow-steps">
+      <article class="step"><h3>1. Official MLB Game Feed</h3><p>The system reads live game-state updates from official MLB data endpoints and validates update sequence integrity before processing.</p></article>
+      <article class="step"><h3>2. Graceffo Appearance Detection</h3><p>Detection logic continuously evaluates roster and pitching events to confirm a real in-game entry condition before triggering notifications.</p></article>
+      <article class="step"><h3>3. Notification Engine</h3><p>A campaign-driven engine creates a controlled send operation with recipient validation, retry policy, and provider routing safeguards.</p></article>
+      <article class="step"><h3>4. SMS Delivered to Approved Recipients</h3><p>Messages are delivered only to explicitly enrolled recipients, with outcome tracking recorded in a delivery ledger for verification and audits.</p></article>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="engineering-title">
+    <h2 id="engineering-title">Built Like a Production Service</h2>
+    <div class="grid">
+      <article><h3>Provider Abstraction</h3><p>A dedicated provider layer decouples business logic from vendor APIs, enabling portability and controlled failover without rewriting campaign logic.</p></article>
+      <article><h3>Retry Engine</h3><p>Structured retry orchestration addresses transient failures while enforcing bounded retry windows to avoid duplicate or runaway delivery behavior.</p></article>
+      <article><h3>Redis Persistence</h3><p>Redis stores campaign and processing state so execution can recover cleanly after restart, preserving operational continuity across process interruptions.</p></article>
+      <article><h3>Campaign State Management</h3><p>A campaign state machine enforces explicit transitions from detection through completion, reducing ambiguity and preventing inconsistent send paths.</p></article>
+      <article><h3>Delivery Ledger</h3><p>An append-only ledger captures send attempts and outcomes to support traceability, incident review, and confidence in final delivery status.</p></article>
+      <article><h3>Circuit Breaker</h3><p>Circuit breaker controls prevent repeated calls into degraded provider dependencies, protecting the service and supporting graceful degradation.</p></article>
+      <article><h3>Runtime Diagnostics</h3><p>Runtime diagnostics expose campaign-level visibility so operators can rapidly inspect active state, delivery attempts, and error conditions.</p></article>
+      <article><h3>Operational Telemetry</h3><p>Telemetry captures latency, failure classes, and recovery outcomes to support reliability tuning and faster troubleshooting over time.</p></article>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="reliability-title">
+    <h2 id="reliability-title">Designed for Reliable Delivery</h2>
+    <p>Graceffo Alert is designed around predictable delivery behavior under real-world conditions. Retry policies and state persistence work together so transient failures do not immediately result in missed notifications.</p>
+    <p>The service prioritizes failure recovery and observability. Campaign state can be resumed after process interruptions, and operational telemetry makes delivery paths inspectable when incidents occur.</p>
+    <p>Provider independence reduces single-vendor risk. If a messaging dependency experiences temporary instability, circuit controls and retry orchestration help the system continue operating gracefully until the provider recovers.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="diagram-title">
+    <h2 id="diagram-title">System Flow</h2>
+    <svg viewBox="0 0 980 200" width="100%" role="img" aria-label="Architecture flow from MLB API to recipients">
+      <rect x="20" y="60" width="170" height="80" rx="10" fill="#192543" stroke="#2a385f"/>
+      <text x="35" y="90" fill="#e6ecff" font-size="14">📊 Official MLB</text>
+      <text x="35" y="112" fill="#afbbde" font-size="13">Stats API Feed</text>
+      <rect x="230" y="60" width="170" height="80" rx="10" fill="#192543" stroke="#2a385f"/>
+      <text x="245" y="90" fill="#e6ecff" font-size="14">⚙️ Graceffo Alert</text>
+      <text x="245" y="112" fill="#afbbde" font-size="13">Detection + Campaign</text>
+      <rect x="440" y="60" width="170" height="80" rx="10" fill="#192543" stroke="#2a385f"/>
+      <text x="455" y="90" fill="#e6ecff" font-size="14">🔌 Provider Layer</text>
+      <text x="455" y="112" fill="#afbbde" font-size="13">Abstraction + Retry</text>
+      <rect x="650" y="60" width="140" height="80" rx="10" fill="#192543" stroke="#2a385f"/>
+      <text x="665" y="90" fill="#e6ecff" font-size="14">📨 SMS Gateway</text>
+      <text x="665" y="112" fill="#afbbde" font-size="13">Delivery Network</text>
+      <rect x="820" y="60" width="140" height="80" rx="10" fill="#192543" stroke="#2a385f"/>
+      <text x="835" y="90" fill="#e6ecff" font-size="14">👥 Recipients</text>
+      <text x="835" y="112" fill="#afbbde" font-size="13">Approved Group</text>
+      <g stroke="#5ea0ff" stroke-width="2" fill="none">
+        <path d="M190 100 L230 100"/>
+        <path d="M400 100 L440 100"/>
+        <path d="M610 100 L650 100"/>
+        <path d="M790 100 L820 100"/>
+      </g>
+    </svg>
+  </section>
+
+  <section class="panel" aria-labelledby="timeline-title">
+    <h2 id="timeline-title">Campaign Timeline</h2>
+    <ol class="timeline">
+      <li><strong>Monitoring:</strong> Live game data is continuously evaluated for player activity changes.</li>
+      <li><strong>Appearance Detected:</strong> Entry criteria validates that Gordon Graceffo is actively in game.</li>
+      <li><strong>Campaign Created:</strong> A campaign instance is initialized with state, recipients, and delivery policy.</li>
+      <li><strong>SMS Delivery:</strong> Initial send is attempted through the active messaging provider.</li>
+      <li><strong>Retry (if necessary):</strong> Transient delivery failures trigger bounded retries with backoff.</li>
+      <li><strong>Campaign Complete:</strong> Final status is persisted in the ledger for audit and operational review.</li>
+    </ol>
+  </section>
+
+  <section class="panel" aria-labelledby="trust-title">
+    <h2 id="trust-title">Trust Indicators</h2>
+    <ul>
+      <li>Personal, invitation-based notification service</li>
+      <li>No advertising, no promotional campaigns, no marketing messages</li>
+      <li>Explicit recipient consent required before enrollment</li>
+      <li>Privacy-first design with minimal data collection</li>
+      <li>Production-quality reliability and observability patterns</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-wrap">
+    <section>
+      <h2>Project Description</h2>
+      <p class="muted">Graceffo Alert is a personal MLB appearance notification service focused on reliability, consent, and transparent engineering.</p>
+    </section>
+    <section>
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="architecture.html">System Architecture</a></li>
+        <li><a href="compliance.html">Compliance</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://github.com/elisagra-123/graceffo-alert-page">GitHub</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <small class="meta">© 2026 Graceffo Alert · Version 2.0 · Last updated 2026-07-26</small>
+    </section>
+  </div>
+</footer>
+</body>
+</html>
