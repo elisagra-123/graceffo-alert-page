@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elisagra-123.github.io/graceffo-alert-page/sitemap.xml
