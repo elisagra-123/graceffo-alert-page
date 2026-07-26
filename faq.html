@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graceffo Alert | FAQ</title>
+  <meta name="description" content="Frequently asked questions about Graceffo Alert subscriptions, delivery behavior, privacy, and support.">
+  <link rel="canonical" href="https://elisagra-123.github.io/graceffo-alert-page/faq.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Graceffo Alert | FAQ">
+  <meta property="og:description" content="Answers about enrollment, delivery reliability, privacy, and support.">
+  <meta property="og:url" content="https://elisagra-123.github.io/graceffo-alert-page/faq.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Graceffo Alert | FAQ">
+  <meta name="twitter:description" content="Common questions about Graceffo Alert SMS notifications.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><div class="nav-wrap"><a class="brand" href="index.html">Graceffo Alert</a><nav aria-label="Primary"><ul><li><a href="index.html">Home</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="faq.html" aria-current="page">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></header>
+<main id="main-content">
+  <section class="hero"><h1>Frequently Asked Questions</h1><p class="lead">Operational, privacy, and enrollment guidance for Graceffo Alert recipients.</p></section>
+
+  <section class="panel">
+    <h2>General Questions</h2>
+
+    <details><summary>1. What is Graceffo Alert?</summary><p>Graceffo Alert is a personal notification service that tracks official MLB game data and sends an SMS update when Gordon Graceffo enters a St. Louis Cardinals game.</p><p>It exists as a software engineering project that demonstrates reliable event detection, campaign orchestration, and observability in a focused real-world use case.</p></details>
+
+    <details><summary>2. Who receives alerts?</summary><p>Alerts are sent only to a fixed, approved group of family members and friends who explicitly requested enrollment.</p><p>The program is not open to unrestricted public sign-up and is intentionally operated at small scale.</p></details>
+
+    <details><summary>3. How do I subscribe?</summary><p>Subscription requires direct approval from the maintainer and explicit consent to receive informational SMS messages.</p><p>If accepted, your number is manually enrolled and can be removed at any time upon request.</p></details>
+
+    <details><summary>4. Can anyone join?</summary><p>No. Access is invitation-based and intentionally limited to prevent misuse and to keep message volume controlled.</p><p>This model also helps maintain strong consent practices and straightforward compliance handling.</p></details>
+
+    <details><summary>5. How often are messages sent?</summary><p>Messages are event-driven. You may receive no messages during games where Gordon Graceffo does not appear, and one or more messages when he does.</p><p>Frequency varies by game conditions, season context, and confirmed in-game participation.</p></details>
+
+    <details><summary>6. Is this affiliated with MLB or the St. Louis Cardinals?</summary><p>No. Graceffo Alert is an independent personal project and is not affiliated with Major League Baseball, any MLB club, or the St. Louis Cardinals organization.</p></details>
+
+    <details><summary>7. What happens if Gordon Graceffo does not pitch?</summary><p>No appearance alert is sent. The service only notifies on confirmed in-game entry conditions.</p></details>
+
+    <details><summary>8. How do I unsubscribe?</summary><p>Reply STOP to unsubscribe immediately from program messages.</p><p>You can also request removal through the contact channels listed on the Contact page.</p></details>
+
+    <details><summary>9. How is my phone number protected?</summary><p>The service stores only the phone number required for delivery. Access is limited to project maintainers responsible for operations.</p><p>Data collection is intentionally minimal: no ad profiles, no behavioral analytics, and no resale of recipient data.</p></details>
+
+    <details><summary>10. What messaging provider is used?</summary><p>Graceffo Alert uses a provider abstraction layer, which means messaging backends can be swapped without redesigning campaign logic.</p><p>This architecture supports resilience and helps reduce vendor lock-in risk.</p></details>
+
+    <details><summary>11. What happens if message delivery fails?</summary><p>Transient failures are handled through bounded retries and campaign state persistence. Delivery outcomes are recorded in a ledger for traceability.</p><p>If a provider is degraded, circuit controls and retry policy are designed to keep the system stable while recovery occurs.</p></details>
+
+    <details><summary>12. Is my information shared?</summary><p>Phone numbers are not sold, rented, or shared for advertising or marketing use.</p><p>Necessary processing by messaging providers and carriers occurs only to route SMS traffic.</p></details>
+
+    <details><summary>13. How accurate are alerts?</summary><p>Alerts are based on official MLB game feeds and detection logic built to confirm true entry events.</p><p>As with any live data pipeline, feed delays or provider interruptions can affect timing, and exact delivery guarantees are not possible.</p></details>
+
+    <details><summary>14. Who maintains the service?</summary><p>Graceffo Alert is maintained as a personal software engineering project focused on reliability, transparency, and practical system design.</p></details>
+
+    <details><summary>15. How can I report an issue?</summary><p>You can report issues through the repository issue tracker or by contacting the maintainer directly through the Contact page.</p><p>When possible, include timing details and message context to help with diagnosis.</p></details>
+  </section>
+</main>
+<footer><div class="footer-wrap"><section><h2>Project Description</h2><p class="muted">FAQ for recipients and reviewers of Graceffo Alert operations.</p></section><section><h2>Quick Links</h2><ul><li><a href="index.html">Home</a></li><li><a href="compliance.html">Compliance</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></section><section><h2>Resources</h2><ul><li><a href="https://github.com/elisagra-123/graceffo-alert-page">GitHub</a></li><li><a href="contact.html">Contact</a></li></ul><small class="meta">© 2026 Graceffo Alert · Version 2.0 · Last updated 2026-07-26</small></section></div></footer>
+</body>
+</html>
