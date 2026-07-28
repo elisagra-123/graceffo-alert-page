@@ -20,28 +20,38 @@ Typical deployment flow:
 4. Confirm the published URL and update canonical metadata if needed.
 
 ## Repository Structure
-- `/index.html` — Home page with product overview, reliability summary, timeline, trust indicators, and architecture flow diagram.
+- `/index.html` — Home page with product overview, reliability summary, timeline, trust indicators, and enrollment CTA.
 - `/architecture.html` — Dedicated system architecture page for engineering audiences.
 - `/compliance.html` — SMS program compliance details for campaign reviewers.
+- `/request-enrollment.html` — Canonical enrollment CTA page with Microsoft Forms workflow, required disclosures, and compliance card.
+- `/enrollment-confirmation.html` — Post-submission confirmation page shown after completing the Enrollment Request Form.
+- `/sms-enrollment.html` — SMS enrollment process documentation including disclosures, supported commands, and example messages.
 - `/privacy.html` — Privacy policy.
 - `/terms.html` — Terms & Conditions.
 - `/faq.html` — Expanded recipient and reviewer FAQ.
 - `/contact.html` — Support and communication page.
 - `/styles.css` — Shared styling and accessibility-focused interaction states.
+- `/config.js` — Site configuration including Microsoft Forms URL and enrollment mode.
+
+## Configuring the Microsoft Forms URL
+Update the `ENROLLMENT_FORM_URL` value in `config.js` when the Microsoft Forms URL is available. This is the only place that needs to be changed:
+
+```js
+const GRACEFFO_CONFIG = {
+  ENROLLMENT_FORM_URL: "https://forms.office.com/YOUR_FORM_ID",
+  ENROLLMENT_FORM_MODE: "tab" // "tab" opens in new tab; "iframe" embeds the form
+};
+```
+
+## Contact Information
+The official contact address for all support, enrollment, privacy, and opt-out requests is:
+**graceffoalert@outlook.com**
 
 ## How to Update Policies
 1. Edit `privacy.html` and/or `terms.html`.
 2. Keep section headings stable when possible for easier review history.
 3. Update "Last updated" text in the footer of modified pages.
 4. Verify compliance references in `compliance.html` remain consistent with policy text.
-
-## How to Customize Contact Information
-Update placeholders in `contact.html`:
-- `your-email@example.com`
-- `https://github.com/your-username/graceffo-alert`
-- `https://github.com/your-username/graceffo-alert/issues`
-
-Also update any matching links in footers and metadata to reflect the final repository and contact owner.
 
 ## Future Roadmap
 - Add versioned policy change log for recipient transparency.
