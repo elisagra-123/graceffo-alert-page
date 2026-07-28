@@ -212,6 +212,120 @@ code {
   border-radius: 4px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 280px;
+}
+
+th {
+  background: var(--surface-2);
+  color: var(--text);
+  text-align: left;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.disclosure-card {
+  background: rgba(94, 160, 255, 0.07);
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  padding: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.disclosure-card h2 {
+  color: var(--accent-2);
+  margin-top: 0;
+}
+
+.disclosure-card ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.disclosure-card li {
+  margin-bottom: 0.45rem;
+  color: var(--text);
+}
+
+.msg-example {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.88rem;
+  color: var(--text);
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.65;
+}
+
+.msg-example-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.enrollment-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.enrollment-flow .ef-step {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.enrollment-flow .ef-arrow {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
