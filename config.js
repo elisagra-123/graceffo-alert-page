@@ -9,6 +9,6 @@
  */
 const GRACEFFO_CONFIG = {
   CONTACT_EMAIL: "graceffoalert@outlook.com",
-  ENROLLMENT_FORM_URL: "https://forms.cloud.microsoft/r/LMJsneWGZu",
+  ENROLLMENT_FORM_URL: "https://forms.cloud.microsoft/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAq06Wk9UNFdTU0QwT0I2UkE2U1VJVEtKV09HTU03Ri4u&route=shorturl",
   ENROLLMENT_FORM_MODE: "tab" // "tab" opens in new tab; "iframe" embeds the form
 };
